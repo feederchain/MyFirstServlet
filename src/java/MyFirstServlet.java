@@ -29,7 +29,8 @@ public class MyFirstServlet extends HttpServlet {
         PrintStream out = new PrintStream(res.getOutputStream());
         res.setContentType("text/html");
         String name = req.getParameter("name");
-        out.println("<p>Hello World! Welcome: " + name + " " + random() + "</p>");
+        out.println("<p>Hello World! Welcome " + name + "</p>");
+        //out.println("<p>This is a random number - " + random() + "</p>");
     }
 
     private double random() {
