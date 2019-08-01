@@ -45,14 +45,20 @@
 
         <%@ page import="java.util.Date" %>
         <%!
-        Date getDate()
-        {
+        Date getDate() {
             System.out.println( "In getDate() method" );
             return new Date();
+        }
+        
+        String genRandom() {
+            return String.valueOf(Math.random());
         }
         %>
         <br>
         Hello!  The time is now <%= getDate() %>
-
+        
+        <br>
+        Oh and here's a random number! <%= genRandom() %>
+        
     </body>
 </html>

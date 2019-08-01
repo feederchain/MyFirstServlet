@@ -26,12 +26,14 @@ public class MyFirstServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        PrintStream out = new PrintStream(res.getOutputStream());
-        res.setContentType("text/html");
-        String name = req.getParameter("name");
-        String last = req.getParameter("last");
-        out.println("<p>Hello World! Welcome " + name + " " + last +"</p>");
-        out.println("<p>This is a random number - " + random() + "</p>");
+        if (req.getParameter("button1") != null) {
+            PrintStream out = new PrintStream(res.getOutputStream());
+            res.setContentType("text/html");
+            String name = req.getParameter("name");
+            String last = req.getParameter("last");
+            out.println("<p>Hello World! Welcome " + name + " " + last +"</p>");
+            out.println("<p>This is a random number - " + random() + "</p>");
+        }
     }
 
     private double random() {
